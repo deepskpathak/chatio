@@ -8,7 +8,6 @@ $(function () {
     var $username = $('#username');
     var $error = $('#error');
 
-
     $usernameForm.submit(function (e){
         e.preventDefault();
         socket.emit('new user', $username.val(), function (data) {
@@ -23,10 +22,11 @@ $(function () {
     });
 
     socket.on('usernames', function (data) {
-       var html = '';
+       var html = '<div class="card-panel blue darken-2 white-text">';
         for(var i = 0; i < data.length; i++) {
             html += data[i] + '<br/>';
         }
+        html += '</div';
         $users.html(html);
     });
 

@@ -2,41 +2,99 @@
 <html>
 <head>
     <title>ChatIO</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<div class="navabar-fixed">
+    <nav>
+        <div class="nav-wrapper blue-grey">
+            <div class="container">
+                <a href="#!" class="brand-logo">Chat IO</a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!--<div class="remodal" data-remodal-id="credit">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <h1>Remodal</h1>
+    <p>
+        Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
+    </p>
+    <br>
+    <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
+    <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+</div>-->
 <div id="container">
     <div id="namesWrapper">
-        <h2>ChatIO</h2>
-        <p>Create Username:</p>
-        <div id="error"></div>
-        <form id="usernameForm">
-            <input type="text" size="35" id="username">
-            <input type="submit" value="Submit">
+        <div class="row">
+            <div class="col l4 s8 offset-l2 center">
+                <h4>Join Chat</h4>
+                <p></p>
+                <form id="usernameForm">
+                    <label for="username">Type name and get started.</label>
+                    <input name="username" type="text" size="35" id="username">
+                    <button data-remodal-action="confirm" class="remodal-confirm btn waves-effect waves-light" type="submit" name="action">Join
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row" id="mainWrapper">
+        <div class="col l6 s8 offset-l2">
+            <div class="card-panel">
+                <div id="chatWrapper">
+                    <div id="chatWindow">
+                    </div>
+                    <form id="messageForm">
+                        <input size="35" id="message" placeholder="Type Something...">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Send
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col l2 s4 center">
+            <div id="userWrapper">
+                <div class="">
+                    <div id="users"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--     <div id="namesWrapper">
+    <h2>ChatIO</h2>
+    <p>Create Username:</p>
+    <div id="error"></div>
+    <form id="usernameForm">
+        <input type="text" size="35" id="username">
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<div id="mainWrapper">
+    <h2>ChatIO</h2>
+    <div id="chatWrapper">
+        <div id="chatWindow"></div>
+        <form id="messageForm">
+            <input size="35" id="message" placeholder="Type Something...">
+            <input type="submit" value="Say It!">
         </form>
     </div>
 
-    <div id="mainWrapper">
-        <h2>ChatIO</h2>
-        <div id="chatWrapper">
-            <div id="chatWindow"></div>
-            <form id="messageForm">
-                <input size="35" id="message" placeholder="Type Something...">
-                <input type="submit" value="Say It!">
-            </form>
-        </div>
-
-        <div id="userWrapper">
-            <div id="users"></div>
-        </div>
+    <div id="userWrapper">
+        <div id="users"></div>
     </div>
+</div> -->
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/script.js"></script>
-<script>
-
-
-</script>
 </html>
