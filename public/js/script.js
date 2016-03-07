@@ -6,7 +6,7 @@ $(function () {
     var $usernameForm = $('#usernameForm');
     var $users = $('#users');
     var $username = $('#username');
-    var $error = $('#error');
+    //var $error = $('#error');
 
     $usernameForm.submit(function (e){
         e.preventDefault();
@@ -15,14 +15,15 @@ $(function () {
                 $('#namesWrapper').hide();
                 $('#mainWrapper').show();
             } else {
-                $error.html('Username is already taken');
+                Materialize.toast('Username is already taken', 4000);
+                //$error.html('Username is already taken');
             }
         });
         $username.val('');
     });
 
     socket.on('usernames', function (data) {
-       var html = '<div class="card-panel blue darken-2 white-text">';
+       var html = '<div class="card-panel blue darken-2 white-text"><h5>Members Online</h5><br><div class="divider"></div><br><br>';
         for(var i = 0; i < data.length; i++) {
             html += data[i] + '<br/>';
         }
@@ -41,6 +42,6 @@ $(function () {
 
     socket.on('new message', function (data) {
         console.log(data.msg);
-        $chat.append('<strong>'+ data.user +'</strong> : ' + data.msg + '<br/>');
+        $chat.append('<strong class="green-text darken-2">'+ data.user +'</strong> : ' + data.msg + '<br/>');
     })
 });
